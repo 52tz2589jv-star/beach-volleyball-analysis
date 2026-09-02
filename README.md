@@ -13,7 +13,7 @@
 #The analysis is only built on the matches with complete stats because that is the subset that can be used to answer the question.
 
 #---METHODOLOGY---
-#Matches were kept only if hitting percentage and errors were recorded for all four players. This left 15,260 matches with complete data across all stats used in this analysis.
+#Matches were kept only if hitting percentage and errors were recorded for all four players. Additionally, matches with immpossible hitting percentages were removed. This left about 15,000 matches with complete data across all stats used in this analysis.
 #Beach volleyball is played in 2-player teams, and the raw data records each player's stats separately. To measure team performance as opposed to individual performance, each pair of stats were averaged together into one team number per match, per stat.
 #Refining this from an earlier version of the project that treated each teammate as a separate data point strengthened the correlation found between each stat.
 #For each stat, winning teams were compared against losing teams in three ways:
@@ -23,7 +23,7 @@
 
 #--RESULTS---
 #Stat | Winner Avg | Loser Avg | Correlation with Winning
-#Hitting % | 0.476 | 0.311 | 0.510
+#Hitting % | 0.474 | 0.310 | 0.555
 #Errors | 2.92 | 4.36 | -0.385
 #Blocks | 1.73 | 1.06 | 0.306
 #Kills | 14.78 | 12.70 | 0.285
