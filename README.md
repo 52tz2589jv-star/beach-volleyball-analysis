@@ -30,7 +30,7 @@
 #Aces | 1.33 | 0.82 | 0.269
 #Digs | 8.43 | 7.15 | 0.177
 
-#Each stat showed a statistically significant difference between winners and losers with extremely low p-values for each stat (confirmed by independent t-tests).
+#Each stat showed a statistically significant difference between winners and losers with extremely low p-values for each stat (confirmed by paired t-tests).
 
 #---CONCLUSION---
 #Hitting percentage is the strongest predictor of winning a beach volleyball match.
