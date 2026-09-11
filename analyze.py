@@ -12,12 +12,14 @@ stats_columns = [
     "w_p1_tot_errors", "w_p2_tot_errors", "l_p1_tot_errors", "l_p2_tot_errors"
 ]
 df_with_stats = df.dropna(subset=stats_columns)
-df_with_stats = df_with_stats[
-    (df_with_stats["w_p1_tot_hitpct"] > -1) & (df_with_stats["w_p1_tot_hitpct"] <= 1) &
-    (df_with_stats["w_p2_tot_hitpct"] > -1) & (df_with_stats["w_p2_tot_hitpct"] <= 1) &
-    (df_with_stats["l_p1_tot_hitpct"] > -1) & (df_with_stats["l_p1_tot_hitpct"] <= 1) &
-    (df_with_stats["l_p2_tot_hitpct"] > -1) & (df_with_stats["l_p2_tot_hitpct"] <= 1)
+hitpct_columns = [
+    "w_p1_tot_hitpct", "w_p2_tot_hitpct", "l_p1_tot_hitpct", "l_p2_tot_hitpct"
 ]
+for column in hitpct_columns:
+    valid_hitpct = (
+        (df_with_stats[column] > -1) & (df_with_stats[column] <= 1)
+    )
+    df_with_stats = df_with_stats[valid_hitpct]
 print(df_with_stats.shape)
 
 df_with_stats["w_team_hitpct"] = df_with_stats[["w_p1_tot_hitpct", "w_p2_tot_hitpct"]].mean(axis=1)
