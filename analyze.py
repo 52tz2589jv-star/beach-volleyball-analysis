@@ -27,7 +27,7 @@ print(df_with_stats["l_team_hitpct"].mean())
 
 winner_hitpct = df_with_stats["w_team_hitpct"]
 loser_hitpct = df_with_stats["l_team_hitpct"]
-hitpct_test = stats.ttest_ind(winner_hitpct, loser_hitpct)
+hitpct_test = stats.ttest_rel(winner_hitpct, loser_hitpct)
 print(hitpct_test)
 
 df_with_stats["w_team_kills"] = df_with_stats[["w_p1_tot_kills", "w_p2_tot_kills"]].mean(axis=1)
@@ -37,7 +37,7 @@ print(df_with_stats["l_team_kills"].mean())
 
 winner_kills = df_with_stats["w_team_kills"]
 loser_kills = df_with_stats["l_team_kills"]
-kills_test = stats.ttest_ind(winner_kills, loser_kills)
+kills_test = stats.ttest_rel(winner_kills, loser_kills)
 print(kills_test)
 
 df_with_stats["w_team_digs"] = df_with_stats[["w_p1_tot_digs", "w_p2_tot_digs"]].mean(axis=1)
@@ -47,7 +47,7 @@ print(df_with_stats["l_team_digs"].mean())
 
 winner_digs = df_with_stats["w_team_digs"]
 loser_digs = df_with_stats["l_team_digs"]
-digs_test = stats.ttest_ind(winner_digs, loser_digs)
+digs_test = stats.ttest_rel(winner_digs, loser_digs)
 print(digs_test)
 
 df_with_stats["w_team_blocks"] = df_with_stats[["w_p1_tot_blocks", "w_p2_tot_blocks"]].mean(axis=1)
@@ -57,7 +57,7 @@ print(df_with_stats["l_team_blocks"].mean())
 
 winner_blocks = df_with_stats["w_team_blocks"]
 loser_blocks = df_with_stats["l_team_blocks"]
-blocks_test = stats.ttest_ind(winner_blocks, loser_blocks)
+blocks_test = stats.ttest_rel(winner_blocks, loser_blocks)
 print(blocks_test)
 
 df_with_stats["w_team_aces"] = df_with_stats[["w_p1_tot_aces", "w_p2_tot_aces"]].mean(axis=1)
@@ -67,7 +67,7 @@ print(df_with_stats["l_team_aces"].mean())
 
 winner_aces = df_with_stats["w_team_aces"]
 loser_aces = df_with_stats["l_team_aces"]
-aces_test = stats.ttest_ind(winner_aces, loser_aces)
+aces_test = stats.ttest_rel(winner_aces, loser_aces)
 print(aces_test)
 
 df_with_stats["w_team_errors"] = df_with_stats[["w_p1_tot_errors", "w_p2_tot_errors"]].mean(axis=1)
@@ -77,7 +77,7 @@ print(df_with_stats["l_team_errors"].mean())
 
 winner_errors = df_with_stats["w_team_errors"]
 loser_errors = df_with_stats["l_team_errors"]
-errors_test = stats.ttest_ind(winner_errors, loser_errors)
+errors_test = stats.ttest_rel(winner_errors, loser_errors)
 print(errors_test)
 
 import matplotlib.pyplot as plt
